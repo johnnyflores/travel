@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{destination.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card *ngIf="destination.id">
+        <img src="{{destination.picture}}"/>
+        <ion-card-content>
+            <h2 class="card-title">{{destination.title}}</h2>
+            <p>{{destination.city}} - {{destination.country}}</p>
+
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <ion-icon item-left name="star"></ion-icon>
+                <h3>Type</h3>
+                <ion-note item-right>{{destination.type}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="logo-usd"></ion-icon>
+                <h3>Price</h3>
+                <ion-note item-right>{{destination.price}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="calendar"></ion-icon>
+                <h3>Date</h3>
+                <ion-note item-right>{{destination.date}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="sunny"></ion-icon>
+                <h3>Duration</h3>
+                <ion-note item-right>{{destination.duration}} days</ion-note>
+            </ion-item>
+            <button ion-item (click)="openAgentDetail(destination.agent)">
+                <ion-avatar item-left>
+                    <img src="{{destination.agent.picture}}"/>
+                </ion-avatar>
+                <h2>{{destination.agent.name}}</h2>
+                <p>{{destination.agent.title}}</p>
+            </button>
+        </ion-list>
+        <ion-item>
+            <button ion-button icon-left (click)="favorite(destination)" clear item-left>
+                <ion-icon name="star"></ion-icon>
+                Favorite
+            </button>
+            <!-- <button ion-button icon-left (click)="share(property)" clear item-right>
+                <ion-icon name="share"></ion-icon>
+                Share
+            </button> -->
+        </ion-item>
+    </ion-card>
+</ion-content>

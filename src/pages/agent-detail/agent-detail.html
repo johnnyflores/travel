@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{agent.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="broker">
+    <ion-card>
+        <ion-card-content>
+            <img src="{{agent.picture}}"/>
+            <h2>{{agent.name}}</h2>
+            <h3>{{agent.title}}</h3>
+        </ion-card-content>
+        <ion-list>
+            <a href="tel:{{agent.Phone__c}}" ion-item>
+                <ion-icon name="call" item-left></ion-icon>
+                <p>Call Office</p>
+                <h2>{{agent.phone}}</h2>
+            </a>
+            <a href="tel:{{agent.phone}}" ion-item>
+                <ion-icon name="call" item-left></ion-icon>
+                <p>Call Mobile</p>
+                <h2>{{agent.mobilePhone}}</h2>
+            </a>
+            <a href="tel:{{agent.phone}}" ion-item>
+                <ion-icon name="text" item-left></ion-icon>
+                <p>Text</p>
+                <h2>{{agent.mobilePhone}}</h2>
+            </a>
+            <a href="mailto:{{agent.email}}" ion-item>
+                <ion-icon name="mail" item-left></ion-icon>
+                <p>Email</p>
+                <h2>{{agent.email}}</h2>
+            </a>
+        </ion-list>
+    </ion-card>
+</ion-content>

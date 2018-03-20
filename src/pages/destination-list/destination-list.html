@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="property-list">
+    <ion-searchbar
+      [(ngModel)]="searchKey"
+      (ionInput)="searchDestination($event)">
+    </ion-searchbar>
+    <ion-list>
+        <ion-item-sliding *ngFor="let destination of destinations">
+            <button ion-item (click)="openDestinationDetail(destination)">
+                <ion-thumbnail item-left>
+                    <img src="{{destination.thumbnail}}"/>
+                </ion-thumbnail>
+                <h2>{{destination.title}}</h2>
+                <p>{{destination.city}}, {{destination.country}} ∙ {{ destination.price }}</p>
+            </button>
+            <ion-item-options>
+                <button danger (click)="deleteItem(property)">Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
